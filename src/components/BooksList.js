@@ -13,7 +13,7 @@ export const BooksList = () => {
     </StyledList>
   ) : (
     <StyledEmptyList>
-      <h1>You don't have books</h1>
+      <h1>You don't have any books</h1>
     </StyledEmptyList>
   );
 };

@@ -9,10 +9,11 @@ export const BookContextProvider = (props) => {
     { id: 2, name: "Second book", author: "Ivan Petrov" },
     { id: 3, name: "Second book", author: "Ivan Petrov" },
   ]);
+
   const lastId = books.length ? books[books.length - 1].id : 0;
-  console.log(lastId);
+
   const addBook = (name, author) => {
-    setBooks([...books], { id: lastId + 1, name: name, author: author });
+    setBooks([...books, { id: lastId + 1, name: name, author: author }]);
   };
   const removeBook = (id) => {
     setBooks(
