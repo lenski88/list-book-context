@@ -1,4 +1,5 @@
 import { Navbar } from "./components/Navbar";
+import { BooksList } from "./components/BooksList";
 import { BookContextProvider } from "./context/BookContext";
 import { GlobalStyles } from "./globalStyles";
 import styled from "styled-components";
@@ -10,6 +11,7 @@ function App() {
       <StyledApp>
         <BookContextProvider>
           <Navbar />
+          <BooksList />
         </BookContextProvider>
       </StyledApp>
     </>
@@ -25,10 +27,6 @@ const StyledApp = styled.div`
   margin: 30px auto;
   border-radius: 10px;
   box-shadow: #70768d 0px 0px 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   color: #fff;
-  overflow: auto;
+  overflow-y: auto;
 `;

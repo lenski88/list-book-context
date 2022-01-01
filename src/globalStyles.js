@@ -12,6 +12,7 @@ html {
 }
 body {
     background-color: #494E62;
+    text-align: center;
     overflow: hidden;
 }
 
