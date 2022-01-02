@@ -35,7 +35,9 @@ export const NewBook = () => {
           maxLength={30}
         />
       </label>
-      <button type="submit">&#43;</button>
+      <StyledButtonAdd type="submit" name={name} author={author}>
+        &#43;
+      </StyledButtonAdd>
     </StyledNewBookForm>
   );
 };
@@ -63,23 +65,34 @@ const StyledNewBookForm = styled.form`
     }
   }
 
-  & button {
-    position: absolute;
-    right: -45px;
-    top: 40px;
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    font-size: 6rem;
-    cursor: pointer;
-    transition: all 0.5s;
-    &:hover {
-      opacity: 0.5;
-      transform: scale(0.9);
-    }
-  }
-
   @media (max-width: 768px) {
     width: 65%;
+  }
+`;
+
+const StyledButtonAdd = styled.button`
+  position: absolute;
+  right: -45px;
+  top: 40px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 6rem;
+  transition: all 0.5s;
+
+  cursor: ${({ name, author }) => (name && author ? "pointer" : "default")};
+
+  animation: ${({ name, author }) =>
+    name && author ? "animButton .5s alternate infinite" : null};
+
+  opacity: ${({ name, author }) => (name && author ? 1 : 0.5)};
+
+  @keyframes animButton {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(0.8);
+    }
   }
 `;
