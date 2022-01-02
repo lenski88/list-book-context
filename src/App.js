@@ -21,14 +21,15 @@ function App() {
 export default App;
 
 const StyledApp = styled.div`
-  max-height: 90vh;
+  height: 90vh;
   max-width: 960px;
   background-color: #333745;
   margin: 30px auto;
   border-radius: 10px;
   box-shadow: #70768d 0px 0px 15px;
   color: #fff;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   &::-webkit-scrollbar {
     width: 10px;

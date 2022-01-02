@@ -62,6 +62,11 @@ const StyledNewBookForm = styled.form`
       outline: none;
       color: #fff;
       font-size: 2.4rem;
+
+      &:focus,
+      &:hover {
+        box-shadow: #fff 0 0 10px;
+      }
     }
   }
 
@@ -78,12 +83,11 @@ const StyledButtonAdd = styled.button`
   color: #fff;
   border: none;
   font-size: 6rem;
-  transition: all 0.5s;
 
   cursor: ${({ name, author }) => (name && author ? "pointer" : "default")};
 
   animation: ${({ name, author }) =>
-    name && author ? "animButton .5s alternate infinite" : null};
+    name && author ? "animButton .25s alternate infinite" : null};
 
   opacity: ${({ name, author }) => (name && author ? 1 : 0.5)};
 
