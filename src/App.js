@@ -1,6 +1,7 @@
 import { Navbar } from "./components/Navbar";
 import { BooksList } from "./components/BooksList";
 import { BookContextProvider } from "./context/BookContext";
+import { VideoBg } from "./components/VideoBg";
 import { GlobalStyles } from "./globalStyles";
 import styled from "styled-components";
 
@@ -8,6 +9,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
+      <VideoBg />
       <StyledApp>
         <BookContextProvider>
           <Navbar />
@@ -30,6 +32,7 @@ const StyledApp = styled.div`
   color: #fff;
   overflow-x: hidden;
   overflow-y: auto;
+  opacity: .88;
 
   &::-webkit-scrollbar {
     width: 10px;
