@@ -1,14 +1,15 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 export const BookContext = createContext();
 
+const storage = JSON.parse(localStorage.getItem("books")) ?? [];
+
 export const BookContextProvider = (props) => {
-  const [books, setBooks] = useState([
-    { id: 0, name: "First book", author: "Petya Ivanov" },
-    { id: 1, name: "Second book", author: "Ivan Petrov" },
-    { id: 2, name: "Second book", author: "Ivan Petrov" },
-    { id: 3, name: "Second book", author: "Ivan Petrov" },
-  ]);
+  const [books, setBooks] = useState(storage);
+
+  useEffect(() => {
+    localStorage.setItem("books", JSON.stringify(books));
+  }, [books]);
 
   const lastId = books.length ? books[books.length - 1].id : 0;
 
