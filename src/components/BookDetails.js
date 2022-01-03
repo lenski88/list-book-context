@@ -34,7 +34,8 @@ const StyledListItem = styled.li`
   border-radius: 5px;
   box-shadow: #fff 0 0 2px;
   transition: all 0.1s;
-  animation: ${({ isRemove }) => (isRemove ? "animDelete .25s" : 'animAdd .25s')};
+  animation: ${({ isRemove }) =>
+    isRemove ? "animDelete .25s" : "animAdd .25s"};
 
   p:first-child {
     font-size: 2.4rem;
